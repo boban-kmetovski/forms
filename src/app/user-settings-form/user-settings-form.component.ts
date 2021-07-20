@@ -27,10 +27,15 @@ export class UserSettingsFormComponent implements OnInit {
   //showError: boolean = false;
   //subscriptionTypes = ["one", "two", "three", "four"];
   subscriptionTypes!: Observable<string[]>;
+
+  singleModel = "On";
+  radioModel = "";
+  startDate!: Date;
   constructor(private dataService: DataService) { }
 
   ngOnInit() {
     this.subscriptionTypes = this.dataService.getSubscriptionTypes();
+    this.startDate = new Date();
   }
 
   onError(err: any){

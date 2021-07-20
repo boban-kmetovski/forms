@@ -1,7 +1,7 @@
 <div class="container">
     <h2>User settings</h2>
     <form #form="ngForm" (ngSubmit)="onSubmit(form)">
-        <!-- text input field -->
+        <!-- name field -->
         <div class="form-group">
             <label for="name">Name</label>
             <input id="name" name="name" class="form-control" [(ngModel)]="userSettings.name" 
@@ -15,7 +15,26 @@
         </div>
         <!-- <p>showError = {{showError}}</p> -->
 
-        
+        <!-- date picker ngx-bootstrap -->
+        <div class="form-group">
+            <label for="startDate">Start Date</label>
+            <input type="text"
+                placeholder="Start Date"
+                class="form-control"
+                [(ngModel)]="startDate" name="startDate" id="startDate"
+                bsDatepicker>
+        </div>
+        {{startDate}}
+        <!-- toggle button ngx-bootstrap --> 
+        <!-- ?? Ne raboti ova?! -->
+        <!-- <button type="button" class="btn btn-primary" name="singleModel"
+            [(ngModel)]="singleModel" btnCheckbox
+            btnCheckboxTrue="On" btnCheckboxFalse="Off">
+            Single Toggle
+        </button> -->
+
+
+
         <!-- checkbox -->
         <div class="form-check form-group">
             <input class="form-check-input" type="checkbox" value="" id="emailOffers" 
@@ -26,7 +45,7 @@
         </div>
         <!-- radio buttons -->
         <h5>Interface Style</h5>
-            <div class="form-check">
+            <!-- <div class="form-check">
             <input class="form-check-input" type="radio" name="interfaceStyle" id="lightInterface" 
             value="light" checked [(ngModel)]="userSettings.interfaceStyle">
             <label class="form-check-label" for="lightInterface">
@@ -46,6 +65,16 @@
             <label class="form-check-label" for="darkInterface">
               Dark
             </label>
+            </div> -->
+
+        <!-- radio ngx-bootstrap -->
+        <div class="btn-group">
+            <label class="btn btn-primary" [(ngModel)]="userSettings.interfaceStyle" name="interfaceStyle"
+                    btnRadio="Light" tabindex="0" role="button">Light</label>
+            <label class="btn btn-primary" [(ngModel)]="userSettings.interfaceStyle" name="interfaceStyle"
+                    btnRadio="Medium" tabindex="0" role="button">Medium</label>
+            <label class="btn btn-primary" [(ngModel)]="userSettings.interfaceStyle" name="interfaceStyle"
+                    btnRadio="Dark" tabindex="0" role="button">Dark</label>
             </div>
         
         <!-- dropdown -->
