@@ -31,6 +31,7 @@ export class UserSettingsFormComponent implements OnInit {
   singleModel = "On";
   radioModel = "";
   startDate!: Date;
+  newParam = 0;
   constructor(private dataService: DataService) { }
 
   ngOnInit() {
